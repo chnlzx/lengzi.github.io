@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://lengzi.me/2018/02/23/%E3%80%8A2018%E5%BC%80%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%A4%A9%E6%80%BB%E7%BB%93%E3%80%8B/</loc>
+    <lastmod>2018-02-24T01:58:53.888Z</lastmod>
+    <data>
+        <display>
+        <title>《2018开年第一天总结》</title>
+        <pubTime>2018-02-23T02:06:11.000Z</pubTime>
+        
+        <tag>思考</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2018/01/11/%E3%80%8AAndroid-studio%E4%B8%8B%E5%B0%86library%E6%89%93%E5%8C%85%E6%88%90jar%E5%B9%B6%E5%8A%A0%E5%AF%86%E6%B7%B7%E6%B7%86%E3%80%8B/</loc>
+    <lastmod>2018-01-11T08:34:35.603Z</lastmod>
+    <data>
+        <display>
+        <title>《Android studio下将library打包成jar并加密混淆》</title>
+        <pubTime>2018-01-11T06:52:04.000Z</pubTime>
+        
+        <tag>sdk</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/08/04/%E4%B8%AA%E4%BA%BA%E7%AE%80%E4%BB%8B/</loc>
+    <lastmod>2018-01-11T06:52:46.500Z</lastmod>
+    <data>
+        <display>
+        <title>个人简介</title>
+        <pubTime>2017-08-04T02:26:00.000Z</pubTime>
+        
+        <tag>关于博主</tag>
+         
+        <tag>自我介绍</tag>
+         
+         
+           
+             
+              <breadCrumb title="自我介绍" url="http://lengzi.me/categories/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/12/29/Android%E4%B8%ADBitmap%E5%92%8CFile%E3%80%81Base64String%E4%BA%92%E8%BD%AC/</loc>
+    <lastmod>2017-12-29T04:00:25.870Z</lastmod>
+    <data>
+        <display>
+        <title>Android中Bitmap和File、Base64String互转</title>
+        <pubTime>2017-12-29T03:45:52.000Z</pubTime>
+        
+        <tag>Bitmap</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/11/15/RecyclerView%E7%9A%84%E5%B0%81%E8%A3%85%E5%92%8C%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2017-11-15T08:30:18.374Z</lastmod>
+    <data>
+        <display>
+        <title>RecyclerView的封装和优化</title>
+        <pubTime>2017-11-15T07:50:25.000Z</pubTime>
+        
+        <tag>RecyclerView</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://lengzi.me/2017/11/15/Android%E4%B8%8B%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E4%BC%A0%E9%80%92%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <lastmod>2017-11-15T06:27:03.463Z</lastmod>
+    <data>
+        <display>
+        <title>Android下组件之间传递不同数据类型</title>
+        <pubTime>2017-11-15T02:15:57.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/08/28/%E9%92%88%E5%AF%B9Android%E4%B8%8B%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E5%8D%95%E4%BE%8B%E5%B0%81%E8%A3%85/</loc>
+    <lastmod>2017-11-15T06:25:48.564Z</lastmod>
+    <data>
+        <display>
+        <title>针对Android下常用工具的单例封装</title>
+        <pubTime>2017-08-28T08:49:31.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>单例</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/11/03/%E3%80%8APython3-%E5%9F%BA%E7%A1%80-%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%8B/</loc>
+    <lastmod>2017-11-03T07:49:27.997Z</lastmod>
+    <data>
+        <display>
+        <title>《Python3-基础:字符串》</title>
+        <pubTime>2017-11-03T06:42:47.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://lengzi.me/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/11/02/%E3%80%8APython3-%E5%9F%BA%E7%A1%80-%E6%8E%A7%E5%88%B6%E6%B5%81%E3%80%8B/</loc>
+    <lastmod>2017-11-02T09:41:36.012Z</lastmod>
+    <data>
+        <display>
+        <title>《Python3-基础:控制流》</title>
+        <pubTime>2017-11-02T08:29:29.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://lengzi.me/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/11/02/%E3%80%8APython3-%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%8B/</loc>
+    <lastmod>2017-11-02T09:32:06.280Z</lastmod>
+    <data>
+        <display>
+        <title>《Python3-基础:运算符》</title>
+        <pubTime>2017-11-02T03:34:58.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://lengzi.me/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/11/01/%E5%8F%8B%E7%9B%9F%E5%A4%9A%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85/</loc>
+    <lastmod>2017-11-01T03:53:59.166Z</lastmod>
+    <data>
+        <display>
+        <title>友盟多渠道打包</title>
+        <pubTime>2017-11-01T03:23:25.000Z</pubTime>
+        
+        <tag>多渠道打包</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/10/17/%E6%A0%88%E4%B8%ADActivity%E7%9A%84%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2017-10-17T03:21:02.079Z</lastmod>
+    <data>
+        <display>
+        <title>栈中Activity的管理</title>
+        <pubTime>2017-10-17T02:29:20.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/10/09/CheckboxView%EF%BC%88%E5%BC%80%E5%85%B3%E6%8E%A7%E4%BB%B6%EF%BC%89/</loc>
+    <lastmod>2017-10-17T03:03:48.842Z</lastmod>
+    <data>
+        <display>
+        <title>CheckboxView（开关控件）</title>
+        <pubTime>2017-10-09T02:50:21.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/10/09/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2017-10-11T07:48:51.972Z</lastmod>
+    <data>
+        <display>
+        <title>加密算法</title>
+        <pubTime>2017-10-09T10:22:59.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>加密</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://lengzi.me/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/08/29/%E3%80%8A%E8%AE%BA%E6%80%8E%E6%A0%B7get%E4%B8%80%E9%A1%B9%E6%96%B0%E6%8A%80%E8%83%BD%E3%80%8B/</loc>
+    <lastmod>2017-08-30T05:46:53.335Z</lastmod>
+    <data>
+        <display>
+        <title>《论怎样get√一项新技能》</title>
+        <pubTime>2017-08-29T07:42:09.000Z</pubTime>
+        
+        <tag>讲道理</tag>
+         
+        <tag>学习方法</tag>
+         
+         
+           
+             
+              <breadCrumb title="感悟" url="http://lengzi.me/categories/%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/08/10/%E5%90%BE%E6%97%A5%E4%B8%89%E7%9C%81/</loc>
+    <lastmod>2017-08-29T10:12:09.429Z</lastmod>
+    <data>
+        <display>
+        <title>吾日三省</title>
+        <pubTime>2017-08-10T08:06:58.000Z</pubTime>
+        
+        <tag>讲道理</tag>
+         
+         
+           
+             
+              <breadCrumb title="感悟" url="http://lengzi.me/categories/%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://lengzi.me/2017/08/04/MarkDownPad%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2017-08-14T09:02:28.767Z</lastmod>
+    <data>
+        <display>
+        <title>MarkDownPad常用安装和语法</title>
+        <pubTime>2017-08-04T05:28:57.000Z</pubTime>
+        
+        <tag>MarkDownPad</tag>
+         
+        <tag>MarkDown语法</tag>
+         
+         
+           
+             
+              <breadCrumb title="MarkDown" url="http://lengzi.me/categories/MarkDown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lengzi.me/2017/08/03/%E5%BC%80%E7%AF%87-%E5%85%B3%E4%BA%8E%E7%BC%96%E5%86%99%E5%8D%9A%E6%96%87/</loc>
+    <lastmod>2017-08-14T09:01:02.005Z</lastmod>
+    <data>
+        <display>
+        <title>开篇-关于编写博文</title>
+        <pubTime>2017-08-03T09:55:15.000Z</pubTime>
+        
+        <tag>开篇</tag>
+         
+        <tag>博文</tag>
+         
+         
+           
+             
+              <breadCrumb title="感悟" url="http://lengzi.me/categories/%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+</urlset>

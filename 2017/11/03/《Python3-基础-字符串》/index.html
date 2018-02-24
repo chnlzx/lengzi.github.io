@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="PUSCu5qME3" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="XasgwnmMST" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Python中的字符串定义跟Java中定义有所不同，语言风格类似JavaScript和PHP。不需要定义字符串类型，创建时候也很简单只需要给变量分配一个值就可以了 例如：var2= “冷子君”">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Python3-基础:字符串》">
+<meta property="og:url" content="http://lengzi.me/2017/11/03/《Python3-基础-字符串》/index.html">
+<meta property="og:site_name" content="冷子君阿">
+<meta property="og:description" content="Python中的字符串定义跟Java中定义有所不同，语言风格类似JavaScript和PHP。不需要定义字符串类型，创建时候也很简单只需要给变量分配一个值就可以了 例如：var2= “冷子君”">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-03T07:49:27.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Python3-基础:字符串》">
+<meta name="twitter:description" content="Python中的字符串定义跟Java中定义有所不同，语言风格类似JavaScript和PHP。不需要定义字符串类型，创建时候也很简单只需要给变量分配一个值就可以了 例如：var2= “冷子君”">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lengzi.me/2017/11/03/《Python3-基础-字符串》/"/>
+
+
+
+
+
+  <title>《Python3-基础:字符串》 | 冷子君阿</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ce57b3431eceeb9d04688986771bd63a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冷子君阿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">将进酒，杯莫停！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签云
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-works">
+          <a href="/works/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            工作记
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lengzi.me/2017/11/03/《Python3-基础-字符串》/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="冷子君">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://lengzi.me/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冷子君阿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《Python3-基础:字符串》</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-03T14:42:47+08:00">
+                2017-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/03/《Python3-基础-字符串》/" class="leancloud_visitors" data-flag-title="《Python3-基础:字符串》">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python中的字符串定义跟Java中定义有所不同，语言风格类似JavaScript和PHP。不需要定义字符串类型，创建时候也很简单只需要给变量分配一个值就可以了 例如：var2= “冷子君”<a id="more"></a></p>
+<h2 id="访问字符串中的值"><a href="#访问字符串中的值" class="headerlink" title="访问字符串中的值"></a>访问字符串中的值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var1 = <span class="string">"hello world"</span></div><div class="line">var2= <span class="string">"冷子君"</span></div><div class="line">print(var1[<span class="number">0</span>],var2[<span class="number">0</span>])</div><div class="line">print(var1[<span class="number">0</span>:<span class="number">5</span>],var2[<span class="number">0</span>:<span class="number">2</span>])</div></pre></td></tr></table></figure>
+<p>输出:<br>h 冷 <br><br>hello 冷子</p>
+<h2 id="Python字符串的更新"><a href="#Python字符串的更新" class="headerlink" title="Python字符串的更新"></a>Python字符串的更新</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var1 = <span class="string">"hello world"</span></div><div class="line">print(var1[:<span class="number">6</span>]+<span class="string">"冷子君"</span>)</div></pre></td></tr></table></figure>
+<p>输出:<br>hello 冷子君</p>
+<h2 id="Python字符串的运算符"><a href="#Python字符串的运算符" class="headerlink" title="Python字符串的运算符"></a>Python字符串的运算符</h2><p>下表实例变量a值为字符串 “Hello”，b变量值为 “Python”：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:right">实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td style="text-align:center">字符串连接</td>
+<td style="text-align:right">a + b 输出结果： HelloPython</td>
+</tr>
+<tr>
+<td>*</td>
+<td style="text-align:center">重复输出字符串</td>
+<td style="text-align:right">a*2 输出结果：HelloHello</td>
+</tr>
+<tr>
+<td>[]</td>
+<td style="text-align:center">通过索引获取字符串中字符</td>
+<td style="text-align:right">a[1] 输出结果 e</td>
+</tr>
+<tr>
+<td>[ : ]</td>
+<td style="text-align:center">截取字符串中的一部分</td>
+<td style="text-align:right">a[1:4] 输出结果 ell</td>
+</tr>
+<tr>
+<td>in</td>
+<td style="text-align:center">成员运算符 - 如果字符串中包含给定的字符返回 True</td>
+<td style="text-align:right">H in a 输出结果 1</td>
+</tr>
+<tr>
+<td>not in</td>
+<td style="text-align:center">成员运算符 - 如果字符串中不包含给定的字符返回 True</td>
+<td style="text-align:right">M not in a 输出结果 1</td>
+</tr>
+<tr>
+<td>r/R</td>
+<td style="text-align:center">原始字符串 - 原始字符串：所有的字符串都是直接按照字面的意思来使用，没有转义特殊或不能打印的字符。 原始字符串除在字符串的第一个引号前加上字母”r”（可以大小写）以外，与普通字符串有着几乎完全相同的语法。</td>
+<td style="text-align:right">print r’\n’ prints \n 和 print R’\n’ prints \n</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Python字符串格式化"><a href="#Python字符串格式化" class="headerlink" title="Python字符串格式化"></a>Python字符串格式化</h2><p>python字符串格式化符号:</p>
+<p><pre><br>     符号     描述<br>      %c     格式化字符及其ASCII码<br>      %s     格式化字符串<br>      %d     格式化整数<br>      %u     格式化无符号整型<br>      %o     格式化无符号八进制数<br>      %x     格式化无符号十六进制数<br>      %X     格式化无符号十六进制数（大写）<br>      %f     格式化浮点数字，可指定小数点后的精度<br>      %e     用科学计数法格式化浮点数<br>      %E     作用同%e，用科学计数法格式化浮点数<br>      %g     %f和%e的简写<br>      %G     %f 和 %E 的简写<br>      %p     用十六进制数格式化变量的地址<br></pre><br>格式化操作符辅助指令:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">符号	功能</div><div class="line">*	定义宽度或者小数点精度</div><div class="line">-	用做左对齐</div><div class="line">+	在正数前面显示加号( + )</div><div class="line">&lt;sp&gt;	在正数前面显示空格</div><div class="line">#	在八进制数前面显示零(&apos;0&apos;)，在十六进制前面显示&apos;0x&apos;或者&apos;0X&apos;(取决于用的是&apos;x&apos;还是&apos;X&apos;)</div><div class="line">0	显示的数字前面填充&apos;0&apos;而不是默认的空格</div><div class="line">%	&apos;%%&apos;输出一个单一的&apos;%&apos;</div><div class="line">(var)	映射变量(字典参数)</div><div class="line">m.n.	m 是显示的最小总宽度,n 是小数点后的位数(如果可用的话)</div><div class="line"></div><div class="line">Python2.6 开始，新增了一种格式化字符串的函数 str.format()，它增强了字符串格式化的功能。</div></pre></td></tr></table></figure>
+<h2 id="Python-的字符串内建函数"><a href="#Python-的字符串内建函数" class="headerlink" title="Python 的字符串内建函数"></a>Python 的字符串内建函数</h2><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capitalize()</td>
+<td style="text-align:center">将字符串的第一个字符转换为大写</td>
+</tr>
+<tr>
+<td>center(width, fillchar)</td>
+<td style="text-align:center">返回一个指定的宽度 width 居中的字符串，fillchar 为填充的字符，默认为空格。</td>
+</tr>
+<tr>
+<td>count(str, beg= 0,end=len(string))</td>
+<td style="text-align:center">返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数</td>
+</tr>
+<tr>
+<td>bytes.decode(encoding=”utf-8”, errors=”strict”)</td>
+<td style="text-align:center">Python3 中没有 decode 方法，但我们可以使用 bytes 对象的 decode() 方法来解码给定的 bytes 对象，这个 bytes 对象可以由 str.encode() 来编码返回</td>
+</tr>
+<tr>
+<td>encode(encoding=’UTF-8’,errors=’strict’)</td>
+<td style="text-align:center">以 encoding 指定的编码格式编码字符串，如果出错默认报一个ValueError 的异常，除非 errors 指定的是’ignore’或者’replace’</td>
+</tr>
+<tr>
+<td>endswith(suffix, beg=0, end=len(string))</td>
+<td style="text-align:center">检查字符串是否以 obj 结束，如果beg 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.</td>
+</tr>
+<tr>
+<td>expandtabs(tabsize=8)</td>
+<td style="text-align:center">把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8 。</td>
+</tr>
+<tr>
+<td>find(str, beg=0 end=len(string))</td>
+<td style="text-align:center">检测 str 是否包含在字符串中，如果指定范围 beg 和 end ，则检查是否包含在指定范围内，如果包含返回开始的索引值，否则返回-1</td>
+</tr>
+<tr>
+<td>index(str, beg=0, end=len(string))</td>
+<td style="text-align:center">跟find()方法一样，只不过如果str不在字符串中会报一个异常.</td>
+</tr>
+<tr>
+<td>isalnum()</td>
+<td style="text-align:center">如果字符串至少有一个字符并且所有字符都是字母或数字则返 回 True,否则返回 False</td>
+</tr>
+<tr>
+<td>isalpha()</td>
+<td style="text-align:center">如果字符串至少有一个字符并且所有字符都是字母则返回 True, 否则返回 False</td>
+</tr>
+<tr>
+<td>isdigit()</td>
+<td style="text-align:center">如果字符串只包含数字则返回 True 否则返回 False..</td>
+</tr>
+<tr>
+<td>islower()</td>
+<td style="text-align:center">如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>isnumeric()</td>
+<td style="text-align:center">如果字符串中只包含数字字符，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>isspace()</td>
+<td style="text-align:center">如果字符串中只包含空白，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>istitle()</td>
+<td style="text-align:center">如果字符串是标题化的(见 title())则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>isupper()</td>
+<td style="text-align:center">如果字符串中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False</td>
+</tr>
+<tr>
+<td>join(seq)</td>
+<td style="text-align:center">以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串</td>
+</tr>
+<tr>
+<td>len(string)</td>
+<td style="text-align:center">返回字符串长度</td>
+</tr>
+<tr>
+<td>ljust(width[, fillchar])</td>
+<td style="text-align:center">返回一个原字符串左对齐,并使用 fillchar 填充至长度 width 的新字符串，fillchar 默认为空格。</td>
+</tr>
+<tr>
+<td>lower()</td>
+<td style="text-align:center">转换字符串中所有大写字符为小写.</td>
+</tr>
+<tr>
+<td>lstrip()</td>
+<td style="text-align:center">截掉字符串左边的空格或指定字符。</td>
+</tr>
+<tr>
+<td>maketrans()</td>
+<td style="text-align:center">创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。</td>
+</tr>
+<tr>
+<td>max(str)</td>
+<td style="text-align:center">返回字符串 str 中最大的字母。</td>
+</tr>
+<tr>
+<td>min(str)</td>
+<td style="text-align:center">返回字符串 str 中最小的字母。</td>
+</tr>
+<tr>
+<td>replace(old, new [, max])</td>
+<td style="text-align:center">把 将字符串中的 str1 替换成 str2,如果 max 指定，则替换不超过 max 次。</td>
+</tr>
+<tr>
+<td>rfind(str, beg=0,end=len(string))</td>
+<td style="text-align:center">类似于 find()函数，不过是从右边开始查找.</td>
+</tr>
+<tr>
+<td>rindex( str, beg=0, end=len(string))</td>
+<td style="text-align:center">类似于 index()，不过是从右边开始.</td>
+</tr>
+<tr>
+<td>rjust(width,[, fillchar])</td>
+<td style="text-align:center">返回一个原字符串右对齐,并使用fillchar(默认空格）填充至长度 width 的新字符串</td>
+</tr>
+<tr>
+<td>rstrip()</td>
+<td style="text-align:center">删除字符串字符串末尾的空格.</td>
+</tr>
+<tr>
+<td>split(str=””, num=string.count(str))</td>
+<td style="text-align:center">num=string.count(str)) 以 str 为分隔符截取字符串，如果 num 有指定值，则仅截取 num 个子字符串</td>
+</tr>
+<tr>
+<td>splitlines([keepends])</td>
+<td style="text-align:center">按照行(‘\r’, ‘\r\n’, \n’)分隔，返回一个包含各行作为元素的列表，如果参数 keepends 为 False，不包含换行符，如果为 True，则保留换行符。</td>
+</tr>
+<tr>
+<td>startswith(str, beg=0,end=len(string))</td>
+<td style="text-align:center">检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果beg 和 end 指定值，则在指定范围内检查。</td>
+</tr>
+<tr>
+<td>strip([chars])</td>
+<td style="text-align:center">在字符串上执行 lstrip()和 rstrip()</td>
+</tr>
+<tr>
+<td>swapcase()</td>
+<td style="text-align:center">将字符串中大写转换为小写，小写转换为大写</td>
+</tr>
+<tr>
+<td>title()</td>
+<td style="text-align:center">返回”标题化”的字符串,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())</td>
+</tr>
+<tr>
+<td>translate(table, deletechars=””)</td>
+<td style="text-align:center">根据 str 给出的表(包含 256 个字符)转换 string 的字符, 要过滤掉的字符放到 deletechars 参数中</td>
+</tr>
+<tr>
+<td>upper()</td>
+<td style="text-align:center">转换字符串中的小写字母为大写</td>
+</tr>
+<tr>
+<td>zfill (width)</td>
+<td style="text-align:center">返回长度为 width 的字符串，原字符串右对齐，前面填充0</td>
+</tr>
+<tr>
+<td>isdecimal()</td>
+<td style="text-align:center">检查字符串是否只包含十进制字符，如果是返回 true，否则返回 false。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://lengzi.me/uploads/wechat-qcode.png" alt="冷子君 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>e-mail：lengzi.me@gmail.com</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/02/《Python3-基础-控制流》/" rel="next" title="《Python3-基础:控制流》">
+                <i class="fa fa-chevron-left"></i> 《Python3-基础:控制流》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/15/Android下组件之间传递不同数据类型/" rel="prev" title="Android下组件之间传递不同数据类型">
+                Android下组件之间传递不同数据类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://lengzi.me/uploads/avatar.png"
+               alt="冷子君" />
+          <p class="site-author-name" itemprop="name">冷子君</p>
+           
+              <p class="site-description motion-element" itemprop="description">指尖人生</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chnlzx" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/3984526183" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              大神链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/xiangzhihong8" title="xiangzhihong8" target="_blank">xiangzhihong8</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/WuXiaolong" title="吴小龙同學" target="_blank">吴小龙同學</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#访问字符串中的值"><span class="nav-number">1.</span> <span class="nav-text">访问字符串中的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python字符串的更新"><span class="nav-number">2.</span> <span class="nav-text">Python字符串的更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python字符串的运算符"><span class="nav-number">3.</span> <span class="nav-text">Python字符串的运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python字符串格式化"><span class="nav-number">4.</span> <span class="nav-text">Python字符串格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-的字符串内建函数"><span class="nav-number">5.</span> <span class="nav-text">Python 的字符串内建函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">冷子君</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("9r6EQGuczXvTWOTn30NyI9cP-gzGzoHsz", "lqEeuKNFY4KXkS3mGtvWYYdD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  	 <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("9r6EQGuczXvTWOTn30NyI9cP-gzGzoHsz", "lqEeuKNFY4KXkS3mGtvWYYdD");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+	});
+}
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+});
+</script>
+  
+</body>
+</html>
