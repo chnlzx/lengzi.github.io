@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://lengzi.me/uploads/eht2.png">
 <meta property="og:image" content="http://lengzi.me/uploads/eht3.png">
 <meta property="og:image" content="http://lengzi.me/uploads/eht.png">
-<meta property="og:updated_time" content="2018-03-07T07:11:25.401Z">
+<meta property="og:updated_time" content="2018-03-07T07:20:05.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于ETH（以太坊）搭建私有链（Window 10）">
 <meta name="twitter:description" content="引言大家看关于区块链技术的文章和书籍看累了吗，实践出真知。接下来跟小冷一起探索以下怎样搭建基于以太坊的私有链吧，据说ETH对Linux支持是最友好的，但是Window下也没什么问题。">
@@ -460,17 +460,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="初始化创世区块"><a href="#初始化创世区块" class="headerlink" title="初始化创世区块"></a>初始化创世区块</h2><ul>
-<li><p>git客户端下输入初始化命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ geth -datadir <span class="string">"%cd%\chain"</span> init genesis.json</div></pre></td></tr></table></figure>
-</li>
-<li><p>响应结果</p>
-</li>
-</ul>
+<h2 id="初始化创世区块"><a href="#初始化创世区块" class="headerlink" title="初始化创世区块"></a>初始化创世区块</h2><p>a. git客户端下输入初始化命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ geth -datadir <span class="string">"%cd%\chain"</span> init genesis.json</div></pre></td></tr></table></figure></p>
+<p>b. 响应结果</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[03-07|11:05:45] Allocated cache and file handles         database=<span class="string">"E:\\Pro                   gram Files\\Geth\\%cd%\\chain\\geth\\chaindata"</span> cache=16 handles=16</div><div class="line">INFO [03-07|11:05:46] Writing custom genesis block</div><div class="line">INFO [03-07|11:05:46] Persisted trie from memory database      nodes=0 size=0.00                   B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B</div><div class="line">INFO [03-07|11:05:46] Successfully wrote genesis state         database=chaindat                   a                                               <span class="built_in">hash</span>=bf2891…ad1419</div><div class="line">INFO [03-07|11:05:46] Allocated cache and file handles         database=<span class="string">"E:\\Pro                   gram Files\\Geth\\%cd%\\chain\\geth\\lightchaindata"</span> cache=16 handles=16</div><div class="line">INFO [03-07|11:05:46] Writing custom genesis block</div><div class="line">INFO [03-07|11:05:46] Persisted trie from memory database      nodes=0 size=0.00                   B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B</div><div class="line">INFO [03-07|11:05:46] Successfully wrote genesis state         database=lightcha                   indata                                               <span class="built_in">hash</span>=bf2891…ad1419</div></pre></td></tr></table></figure>
-<h2 id="创建私有链主账号"><a href="#创建私有链主账号" class="headerlink" title="创建私有链主账号"></a>创建私有链主账号</h2><ol>
-<li>打开Geth控制台</li>
-</ol>
+<h2 id="创建私有链主账号"><a href="#创建私有链主账号" class="headerlink" title="创建私有链主账号"></a>创建私有链主账号</h2><p>a. 打开Geth控制台</p>
 <ul>
 <li>命令行</li>
 </ul>
@@ -479,9 +472,7 @@
 <li>响应结果</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">INFO [03-07|11:14:38] Maximum peer count                       ETH=25 LES=0 total=25</div><div class="line">INFO [03-07|11:14:38] Starting peer-to-peer node               instance=Geth/v1.8.1-stable-1e67410e/windows-amd64/go1.9.2</div><div class="line">INFO [03-07|11:14:38] Allocated cache and file handles         database=<span class="string">"E:\\Program Files\\Geth\\%cd%\\chain\\geth\\chaindata"</span> cache=768 handles=1024</div><div class="line">WARN [03-07|11:14:38] Upgrading database to use lookup entries</div><div class="line">INFO [03-07|11:14:38] Database deduplication successful        deduped=0</div><div class="line">INFO [03-07|11:14:38] Initialised chain configuration          config=<span class="string">"&#123;ChainID: 10 Homestead: 0 DAO: &lt;nil&gt; DAOSupport: false EIP150: &lt;nil&gt; EIP155: 0 EIP158: 0 Byzantium: &lt;nil&gt; Engine: unknown&#125;"</span></div><div class="line">INFO [03-07|11:14:38] Disk storage enabled <span class="keyword">for</span> ethash caches   dir=<span class="string">"E:\\Program Files\\Geth\\%cd%\\chain\\geth\\ethash"</span> count=3</div><div class="line">INFO [03-07|11:14:38] Disk storage enabled <span class="keyword">for</span> ethash DAGs     dir=C:\\Users\\admin\\AppData\\Ethash                    count=2</div><div class="line">INFO [03-07|11:14:38] Initialising Ethereum protocol           versions=<span class="string">"[63 62]"</span> network=1</div><div class="line">INFO [03-07|11:14:38] Loaded most recent <span class="built_in">local</span> header          number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554432</div><div class="line">INFO [03-07|11:14:38] Loaded most recent <span class="built_in">local</span> full block      number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554432</div><div class="line">INFO [03-07|11:14:38] Loaded most recent <span class="built_in">local</span> fast block      number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554432</div><div class="line">INFO [03-07|11:14:38] Regenerated <span class="built_in">local</span> transaction journal    transactions=0 accounts=0</div><div class="line">INFO [03-07|11:14:38] Starting P2P networking</div><div class="line">INFO [03-07|11:14:40] UDP listener up                          self=enode://8096441162deac09f26e704c1df61be6f67d2a4d60772b3c0f5be833f1e6ff07e096939cab2704d9e5099326ba77fad3e2ca20364b868cdd88f909e5cf789677@[::]:30303</div><div class="line">INFO [03-07|11:14:40] RLPx listener up                         self=enode://8096441162deac09f26e704c1df61be6f67d2a4d60772b3c0f5be833f1e6ff07e096939cab2704d9e5099326ba77fad3e2ca20364b868cdd88f909e5cf789677@[::]:30303</div><div class="line">INFO [03-07|11:14:40] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ipc</div><div class="line">Welcome to the Geth JavaScript console!</div><div class="line"></div><div class="line">instance: Geth/v1.8.1-stable-1e67410e/windows-amd64/go1.9.2</div><div class="line"> modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0</div></pre></td></tr></table></figure>
-<ol>
-<li>创建住用户设置密码</li>
-</ol>
+<p>b. 创建主用户并设置密码</p>
 <ul>
 <li><p>命令行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ geth -datadir <span class="string">"%cd%\chain"</span> console</div></pre></td></tr></table></figure>
@@ -490,9 +481,7 @@
 </li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">!! Unsupported terminal, password will be echoed.</div><div class="line">Passphrase: 123456</div><div class="line"></div><div class="line">Repeat passphrase: 123456</div><div class="line"></div><div class="line"><span class="string">"0x6483f89d648a16af39f7e8198443df5b5d402805"</span></div><div class="line">&gt; INFO [03-07|11:22:38] Etherbase automatically configured       address=0x6483F89d648a16AF39F7e8198443df5B5d402805</div></pre></td></tr></table></figure>
-<h2 id="启动私有链节点"><a href="#启动私有链节点" class="headerlink" title="启动私有链节点"></a>启动私有链节点</h2><ol>
-<li>开启私有链节点</li>
-</ol>
+<h2 id="启动私有链节点"><a href="#启动私有链节点" class="headerlink" title="启动私有链节点"></a>启动私有链节点</h2><p>a. 开启私有链节点</p>
 <ul>
 <li>命令行</li>
 </ul>
@@ -504,12 +493,9 @@
 <p>开启自动挖矿模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">INFO [03-07|13:52:29] Successfully sealed new block            number=82 <span class="built_in">hash</span>=5f3b8b…016c4a</div><div class="line">INFO [03-07|13:52:29] 🔗 block reached canonical chain          number=77 <span class="built_in">hash</span>=e50543…17be08</div><div class="line">INFO [03-07|13:52:29] 🔨 mined potential block                  number=82 <span class="built_in">hash</span>=5f3b8b…016c4a</div><div class="line">INFO [03-07|13:52:29] Commit new mining work                   number=83 txs=0 uncles=0 elapsed=501.4µs</div><div class="line">INFO [03-07|13:52:30] Successfully sealed new block            number=83 <span class="built_in">hash</span>=ca0e74…b4c1b8</div><div class="line">INFO [03-07|13:52:30] 🔗 block reached canonical chain          number=78 <span class="built_in">hash</span>=d79fee…65e27b</div><div class="line">INFO [03-07|13:52:30] 🔨 mined potential block                  number=83 <span class="built_in">hash</span>=ca0e74…b4c1b8</div><div class="line">INFO [03-07|13:52:30] Commit new mining work                   number=84 txs=0 uncles=0 elapsed=0s</div><div class="line">INFO [03-07|13:52:30] Successfully sealed new block            number=84 <span class="built_in">hash</span>=97e4ce…aadb11</div><div class="line">INFO [03-07|13:52:30] 🔗 block reached canonical chain          number=79 <span class="built_in">hash</span>=d6378c…dfe012</div><div class="line">INFO [03-07|13:52:30] 🔨 mined potential block                  number=84 <span class="built_in">hash</span>=97e4ce…aadb11</div><div class="line">INFO [03-07|13:52:30] Commit new mining work                   number=85 txs=0 uncles=0 elapsed=500.6µs</div><div class="line">INFO [03-07|13:52:34] Successfully sealed new block            number=85 <span class="built_in">hash</span>=5f8afd…339017</div><div class="line">INFO [03-07|13:52:34] 🔗 block reached canonical chain          number=80 <span class="built_in">hash</span>=d3540e…2c1c94</div><div class="line">INFO [03-07|13:52:34] 🔨 mined potential block                  number=85 <span class="built_in">hash</span>=5f8afd…339017</div><div class="line">INFO [03-07|13:52:34] Commit new mining work                   number=86 txs=0 uncles=0 elapsed=0</div></pre></td></tr></table></figure></p>
 <p>注意：在光标闪烁出耐心等待他挖矿</p>
 <h2 id="打开ETH钱包查看挖矿结果"><a href="#打开ETH钱包查看挖矿结果" class="headerlink" title="打开ETH钱包查看挖矿结果"></a>打开ETH钱包查看挖矿结果</h2><ol>
-<li>打开ETH钱包的exe程序 如下图</li>
+<li>打开ETH钱包的exe程序 启动图如下图</li>
 </ol>
-<p>正确：</p>
-<p><img src="http://lengzi.me/uploads/eht2.png" alt="安装失败"></p>
-<p>错误：</p>
-<p><img src="http://lengzi.me/uploads/eht3.png" alt="安装失败"></p>
+<p><img src="http://lengzi.me/uploads/eht2.png" alt="安装失败"><br><img src="http://lengzi.me/uploads/eht3.png" alt="安装失败"></p>
 <ul>
 <li>注意打开钱包启动页面是图一不是图二</li>
 </ul>
