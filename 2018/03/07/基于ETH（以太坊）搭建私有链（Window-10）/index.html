@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://lengzi.me/uploads/eht2.png">
 <meta property="og:image" content="http://lengzi.me/uploads/eht3.png">
 <meta property="og:image" content="http://lengzi.me/uploads/eht.png">
-<meta property="og:updated_time" content="2018-03-07T07:21:36.588Z">
+<meta property="og:updated_time" content="2018-03-07T07:27:24.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于ETH（以太坊）搭建私有链（Window 10）">
 <meta name="twitter:description" content="引言大家看关于区块链技术的文章和书籍看累了吗，实践出真知。接下来跟小冷一起探索以下怎样搭建基于以太坊的私有链吧，据说ETH对Linux支持是最友好的，但是Window下也没什么问题。">
@@ -508,21 +508,19 @@
 </ol>
 <p>注意：如果要想转账确认需要在 Geth操作台内启动挖矿指令(miner.start())才能确认交易</p>
 <h2 id="操作台常用指令"><a href="#操作台常用指令" class="headerlink" title="操作台常用指令"></a>操作台常用指令</h2><ol>
-<li>查询所有以太坊账户</li>
-</ol>
+<li><p>查询所有以太坊账户</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; personal.listAccounts</div></pre></td></tr></table></figure>
-<ol>
-<li>查看以太坊账户余额</li>
-</ol>
+</li>
+<li><p>查看以太坊账户余额</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; eth.getBalance(eth.accounts[1])</div></pre></td></tr></table></figure>
-<ol>
-<li>开始挖矿</li>
-</ol>
+</li>
+<li><p>开始挖矿</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; miner.start()</div></pre></td></tr></table></figure>
-<ol>
-<li>停止挖矿</li>
-</ol>
+</li>
+<li><p>停止挖矿</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; miner.stop()</div></pre></td></tr></table></figure>
+</li>
+</ol>
 <h2 id="指令参数解释"><a href="#指令参数解释" class="headerlink" title="指令参数解释"></a>指令参数解释</h2><table>
 <thead>
 <tr>
