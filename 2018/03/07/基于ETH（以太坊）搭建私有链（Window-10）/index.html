@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="PUSCu5qME3" />
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="XasgwnmMST" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="区块链,ETH," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="引言大家看关于区块链技术的文章和书籍看累了吗，实践出真知。接下来跟小冷一起探索以下怎样搭建基于以太坊的私有链吧，据说ETH对Linux支持是最友好的，但是Window下也没什么问题。">
+<meta name="keywords" content="区块链,ETH">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于ETH（以太坊）搭建私有链（Window 10）">
+<meta property="og:url" content="http://lengzi.me/2018/03/07/基于ETH（以太坊）搭建私有链（Window-10）/index.html">
+<meta property="og:site_name" content="冷子君阿">
+<meta property="og:description" content="引言大家看关于区块链技术的文章和书籍看累了吗，实践出真知。接下来跟小冷一起探索以下怎样搭建基于以太坊的私有链吧，据说ETH对Linux支持是最友好的，但是Window下也没什么问题。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://lengzi.me/uploads/eht2.png">
+<meta property="og:image" content="http://lengzi.me/uploads/eht2.png">
+<meta property="og:image" content="http://lengzi.me/uploads/eht.png">
+<meta property="og:updated_time" content="2018-03-07T07:06:30.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于ETH（以太坊）搭建私有链（Window 10）">
+<meta name="twitter:description" content="引言大家看关于区块链技术的文章和书籍看累了吗，实践出真知。接下来跟小冷一起探索以下怎样搭建基于以太坊的私有链吧，据说ETH对Linux支持是最友好的，但是Window下也没什么问题。">
+<meta name="twitter:image" content="http://lengzi.me/uploads/eht2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lengzi.me/2018/03/07/基于ETH（以太坊）搭建私有链（Window-10）/"/>
+
+
+
+
+
+  <title>基于ETH（以太坊）搭建私有链（Window 10） | 冷子君阿</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ce57b3431eceeb9d04688986771bd63a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">冷子君阿</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">将进酒，杯莫停！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间轴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签云
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-works">
+          <a href="/works/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            工作记
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lengzi.me/2018/03/07/基于ETH（以太坊）搭建私有链（Window-10）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="冷子君">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://lengzi.me/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冷子君阿">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于ETH（以太坊）搭建私有链（Window 10）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T10:30:49+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/07/基于ETH（以太坊）搭建私有链（Window-10）/" class="leancloud_visitors" data-flag-title="基于ETH（以太坊）搭建私有链（Window 10）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>大家看关于区块链技术的文章和书籍看累了吗，实践出真知。接下来跟小冷一起探索以下怎样搭建基于以太坊的私有链吧，据说ETH对Linux支持是最友好的，但是Window下也没什么问题。<a id="more"></a></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>以太坊go客户端 <a href="https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum" target="_blank" rel="external">传送门</a></li>
+<li>以太坊钱包<a href="https://github.com/ethereum/mist/releases/" target="_blank" rel="external">传送门</a>（等启动私有链节点时才安装）</li>
+<li>Git客户端（也可在dos窗口）</li>
+</ol>
+<h2 id="配置创世区块json文件"><a href="#配置创世区块json文件" class="headerlink" title="配置创世区块json文件"></a>配置创世区块json文件</h2><ol>
+<li>创建一个genesis.json文件放在Geth文件夹，内容如下</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"config"</span>: &#123;</div><div class="line">        <span class="attr">"chainId"</span>: <span class="number">10</span>,</div><div class="line">        <span class="attr">"homesteadBlock"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"eip155Block"</span>: <span class="number">0</span>,</div><div class="line">        <span class="attr">"eip158Block"</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">  <span class="attr">"alloc"</span>      : &#123;&#125;,</div><div class="line">  <span class="attr">"coinbase"</span>   : <span class="string">"0x0000000000000000000000000000000000000000"</span>,</div><div class="line">  <span class="attr">"difficulty"</span> : <span class="string">"0x02000000"</span>,</div><div class="line">  <span class="attr">"extraData"</span>  : <span class="string">"lengzi.me"</span>,</div><div class="line">  <span class="attr">"gasLimit"</span>   : <span class="string">"0x2fefd8"</span>,</div><div class="line">  <span class="attr">"nonce"</span>      : <span class="string">"0x0000000000000042"</span>,</div><div class="line">  <span class="attr">"mixhash"</span>    : <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</div><div class="line">  <span class="attr">"parentHash"</span> : <span class="string">"0x0000000000000000000000000000000000000000000000000000000000000000"</span>,</div><div class="line">  <span class="attr">"timestamp"</span>  : <span class="string">"0x00"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>创世文件参数介绍</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config.chainId</td>
+<td>区块链的ID，在 geth 命令中的 –networkid 参数需要与 chainId 的值一致</td>
+</tr>
+<tr>
+<td>config.homesteadBlock</td>
+<td>硬分叉区块高度</td>
+</tr>
+<tr>
+<td>config.eip155Block</td>
+<td>硬分叉高度</td>
+</tr>
+<tr>
+<td>config.eip158Block</td>
+<td>硬分叉高度</td>
+</tr>
+<tr>
+<td>coinbase</td>
+<td>矿工账号，第一个区块挖出后将给这个矿工账号发送奖励的以太币</td>
+</tr>
+<tr>
+<td>difficulty</td>
+<td>难度值，越大越难</td>
+</tr>
+<tr>
+<td>extraData</td>
+<td>附加信息</td>
+</tr>
+<tr>
+<td>gasLimit</td>
+<td>gas 的消耗总量限制，用来限制区块能包含的交易信息总和</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>一个 64 位随机数</td>
+</tr>
+<tr>
+<td>mixhash</td>
+<td>nonce 配合用于挖矿，由上一个区块的一部分生成的 hash</td>
+</tr>
+<tr>
+<td>parentHash</td>
+<td>上一个区块的 hash 值</td>
+</tr>
+<tr>
+<td>alloc</td>
+<td>预设账号以及账号的以太币数量，私有链挖矿比较容易可以不配置</td>
+</tr>
+</tbody>
+</table>
+<h2 id="初始化创世区块"><a href="#初始化创世区块" class="headerlink" title="初始化创世区块"></a>初始化创世区块</h2><ul>
+<li><p>git客户端下输入初始化命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ geth -datadir <span class="string">"%cd%\chain"</span> init genesis.json</div></pre></td></tr></table></figure>
+</li>
+<li><p>响应结果</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[03-07|11:05:45] Allocated cache and file handles         database=<span class="string">"E:\\Pro                   gram Files\\Geth\\%cd%\\chain\\geth\\chaindata"</span> cache=16 handles=16</div><div class="line">INFO [03-07|11:05:46] Writing custom genesis block</div><div class="line">INFO [03-07|11:05:46] Persisted trie from memory database      nodes=0 size=0.00                   B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B</div><div class="line">INFO [03-07|11:05:46] Successfully wrote genesis state         database=chaindat                   a                                               <span class="built_in">hash</span>=bf2891…ad1419</div><div class="line">INFO [03-07|11:05:46] Allocated cache and file handles         database=<span class="string">"E:\\Pro                   gram Files\\Geth\\%cd%\\chain\\geth\\lightchaindata"</span> cache=16 handles=16</div><div class="line">INFO [03-07|11:05:46] Writing custom genesis block</div><div class="line">INFO [03-07|11:05:46] Persisted trie from memory database      nodes=0 size=0.00                   B time=0s gcnodes=0 gcsize=0.00B gctime=0s livenodes=1 livesize=0.00B</div><div class="line">INFO [03-07|11:05:46] Successfully wrote genesis state         database=lightcha                   indata                                               <span class="built_in">hash</span>=bf2891…ad1419</div></pre></td></tr></table></figure>
+<h2 id="创建私有链主账号"><a href="#创建私有链主账号" class="headerlink" title="创建私有链主账号"></a>创建私有链主账号</h2><ol>
+<li>打开Geth控制台</li>
+</ol>
+<ul>
+<li>命令行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ geth -datadir <span class="string">"%cd%\chain"</span> console</div></pre></td></tr></table></figure>
+<ul>
+<li>响应结果</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">INFO [03-07|11:14:38] Maximum peer count                       ETH=25 LES=0 total=25</div><div class="line">INFO [03-07|11:14:38] Starting peer-to-peer node               instance=Geth/v1.8.1-stable-1e67410e/windows-amd64/go1.9.2</div><div class="line">INFO [03-07|11:14:38] Allocated cache and file handles         database=<span class="string">"E:\\Program Files\\Geth\\%cd%\\chain\\geth\\chaindata"</span> cache=768 handles=1024</div><div class="line">WARN [03-07|11:14:38] Upgrading database to use lookup entries</div><div class="line">INFO [03-07|11:14:38] Database deduplication successful        deduped=0</div><div class="line">INFO [03-07|11:14:38] Initialised chain configuration          config=<span class="string">"&#123;ChainID: 10 Homestead: 0 DAO: &lt;nil&gt; DAOSupport: false EIP150: &lt;nil&gt; EIP155: 0 EIP158: 0 Byzantium: &lt;nil&gt; Engine: unknown&#125;"</span></div><div class="line">INFO [03-07|11:14:38] Disk storage enabled <span class="keyword">for</span> ethash caches   dir=<span class="string">"E:\\Program Files\\Geth\\%cd%\\chain\\geth\\ethash"</span> count=3</div><div class="line">INFO [03-07|11:14:38] Disk storage enabled <span class="keyword">for</span> ethash DAGs     dir=C:\\Users\\admin\\AppData\\Ethash                    count=2</div><div class="line">INFO [03-07|11:14:38] Initialising Ethereum protocol           versions=<span class="string">"[63 62]"</span> network=1</div><div class="line">INFO [03-07|11:14:38] Loaded most recent <span class="built_in">local</span> header          number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554432</div><div class="line">INFO [03-07|11:14:38] Loaded most recent <span class="built_in">local</span> full block      number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554432</div><div class="line">INFO [03-07|11:14:38] Loaded most recent <span class="built_in">local</span> fast block      number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554432</div><div class="line">INFO [03-07|11:14:38] Regenerated <span class="built_in">local</span> transaction journal    transactions=0 accounts=0</div><div class="line">INFO [03-07|11:14:38] Starting P2P networking</div><div class="line">INFO [03-07|11:14:40] UDP listener up                          self=enode://8096441162deac09f26e704c1df61be6f67d2a4d60772b3c0f5be833f1e6ff07e096939cab2704d9e5099326ba77fad3e2ca20364b868cdd88f909e5cf789677@[::]:30303</div><div class="line">INFO [03-07|11:14:40] RLPx listener up                         self=enode://8096441162deac09f26e704c1df61be6f67d2a4d60772b3c0f5be833f1e6ff07e096939cab2704d9e5099326ba77fad3e2ca20364b868cdd88f909e5cf789677@[::]:30303</div><div class="line">INFO [03-07|11:14:40] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ipc</div><div class="line">Welcome to the Geth JavaScript console!</div><div class="line"></div><div class="line">instance: Geth/v1.8.1-stable-1e67410e/windows-amd64/go1.9.2</div><div class="line"> modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0</div></pre></td></tr></table></figure>
+<ol>
+<li>创建住用户设置密码</li>
+</ol>
+<ul>
+<li><p>命令行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ geth -datadir <span class="string">"%cd%\chain"</span> console</div></pre></td></tr></table></figure>
+</li>
+<li><p>响应结果</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">!! Unsupported terminal, password will be echoed.</div><div class="line">Passphrase: 123456</div><div class="line"></div><div class="line">Repeat passphrase: 123456</div><div class="line"></div><div class="line"><span class="string">"0x6483f89d648a16af39f7e8198443df5b5d402805"</span></div><div class="line">&gt; INFO [03-07|11:22:38] Etherbase automatically configured       address=0x6483F89d648a16AF39F7e8198443df5B5d402805</div></pre></td></tr></table></figure>
+<h2 id="启动私有链节点"><a href="#启动私有链节点" class="headerlink" title="启动私有链节点"></a>启动私有链节点</h2><ol>
+<li>开启私有链节点</li>
+</ol>
+<ul>
+<li>命令行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ geth -targetgaslimit 4294967295 -rpc -rpcaddr <span class="string">"192.168.1.100"</span> -rpcport <span class="string">"8101"</span> -port <span class="string">"30301"</span> -rpcapi <span class="string">"eth,web3,personal"</span> -networkid 2018 -identity 2018 -nodiscover -maxpeers 5 -datadir <span class="string">"%cd%\chain"</span> -unlock 0 -rpccorsdomain <span class="string">"*"</span> -mine console</div></pre></td></tr></table></figure>
+<ul>
+<li>响应结果</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">INFO [03-07|11:30:53] Maximum peer count                       ETH=5 LES=0 total=5</div><div class="line">INFO [03-07|11:30:54] Starting peer-to-peer node               instance=Geth/2018/v1.8.1-stable-1e6      7410e/windows-amd64/go1.9.2</div><div class="line">INFO [03-07|11:30:54] Allocated cache and file handles         database=<span class="string">"E:\\Program Files\\Geth\\%      cd%\\chain\\geth\\chaindata"</span> cache=768 handles=1024</div><div class="line">INFO [03-07|11:30:54] Initialised chain configuration          config=<span class="string">"&#123;ChainID: 10 Homestead: 0 DA      O: &lt;nil&gt; DAOSupport: false EIP150: &lt;nil&gt; EIP155: 0 EIP158: 0 Byzantium: &lt;nil&gt; Engine: unknown&#125;"</span></div><div class="line">INFO [03-07|11:30:54] Disk storage enabled <span class="keyword">for</span> ethash caches   dir=<span class="string">"E:\\Program Files\\Geth\\%cd%\\      chain\\geth\\ethash"</span> count=3</div><div class="line">INFO [03-07|11:30:54] Disk storage enabled <span class="keyword">for</span> ethash DAGs     dir=C:\\Users\\admin\\AppData\\Ethas      h                    count=2</div><div class="line">INFO [03-07|11:30:54] Initialising Ethereum protocol           versions=<span class="string">"[63 62]"</span> network=2018</div><div class="line">INFO [03-07|11:30:54] Loaded most recent <span class="built_in">local</span> header          number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554      432</div><div class="line">INFO [03-07|11:30:54] Loaded most recent <span class="built_in">local</span> full block      number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554      432</div><div class="line">INFO [03-07|11:30:54] Loaded most recent <span class="built_in">local</span> fast block      number=0 <span class="built_in">hash</span>=bf2891…ad1419 td=33554      432</div><div class="line">INFO [03-07|11:30:54] Loaded <span class="built_in">local</span> transaction journal         transactions=0 dropped=0</div><div class="line">INFO [03-07|11:30:54] Regenerated <span class="built_in">local</span> transaction journal    transactions=0 accounts=0</div><div class="line">INFO [03-07|11:30:54] Starting P2P networking</div><div class="line">INFO [03-07|11:30:54] RLPx listener up                         self=<span class="string">"enode://8096441162deac09f26e70      4c1df61be6f67d2a4d60772b3c0f5be833f1e6ff07e096939cab2704d9e5099326ba77fad3e2ca20364b868cdd88f909e5c      f789677@[::]:30301?discport=0"</span></div><div class="line">INFO [03-07|11:30:54] HTTP endpoint opened                     url=http://192.168.1.100:8101 cors=*       vhosts=localhost</div><div class="line">WARN [03-07|11:30:54] -------------------------------------------------------------------</div><div class="line">WARN [03-07|11:30:54] Referring to accounts by order <span class="keyword">in</span> the keystore folder is dangerous!</div><div class="line">WARN [03-07|11:30:54] This functionality is deprecated and will be removed <span class="keyword">in</span> the future!</div><div class="line">WARN [03-07|11:30:54] Please use explicit addresses! (can search via `geth account list`)</div><div class="line">WARN [03-07|11:30:54] -------------------------------------------------------------------</div><div class="line">Unlocking account 0 | Attempt 1/3</div><div class="line">!! Unsupported terminal, password will be echoed.</div><div class="line">Passphrase: INFO [03-07|11:30:54] IPC endpoint opened                      url=\\\\.\\pipe\\geth.ip      c</div><div class="line"></div><div class="line"></div><div class="line">Unlocking account 0 | Attempt 2/3</div><div class="line">Passphrase: 123456(手动输入刚才设置的密码)</div><div class="line"></div><div class="line">INFO [03-07|11:31:37] Unlocked account                         address=0x6483F89d648a16AF39F7e81984      43df5B5d402805</div><div class="line">INFO [03-07|11:31:37] Transaction pool price threshold updated price=18000000000</div><div class="line">INFO [03-07|11:31:37] Etherbase automatically configured       address=0x6483F89d648a16AF39F7e81984      43df5B5d402805</div><div class="line">INFO [03-07|11:31:37] Starting mining operation</div><div class="line">INFO [03-07|11:31:37] Commit new mining work                   number=1 txs=0 uncles=0 elapsed=0s</div><div class="line">Welcome to the Geth JavaScript console!</div><div class="line"></div><div class="line">instance: Geth/2018/v1.8.1-stable-1e67410e/windows-amd64/go1.9.2</div><div class="line">coinbase: 0x6483f89d648a16af39f7e8198443df5b5d402805</div><div class="line">at block: 0 (Thu, 01 Jan 1970 08:00:00 CST)</div><div class="line"> datadir: E:\Program Files\Geth\%<span class="built_in">cd</span>%\chain</div><div class="line"> modules: admin:1.0 debug:1.0 eth:1.0 miner:1.0 net:1.0 personal:1.0 rpc:1.0 txpool:1.0 web3:1.0</div></pre></td></tr></table></figure>
+<p>开启自动挖矿模式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">INFO [03-07|13:52:29] Successfully sealed new block            number=82 <span class="built_in">hash</span>=5f3b8b…016c4a</div><div class="line">INFO [03-07|13:52:29] 🔗 block reached canonical chain          number=77 <span class="built_in">hash</span>=e50543…17be08</div><div class="line">INFO [03-07|13:52:29] 🔨 mined potential block                  number=82 <span class="built_in">hash</span>=5f3b8b…016c4a</div><div class="line">INFO [03-07|13:52:29] Commit new mining work                   number=83 txs=0 uncles=0 elapsed=501.4µs</div><div class="line">INFO [03-07|13:52:30] Successfully sealed new block            number=83 <span class="built_in">hash</span>=ca0e74…b4c1b8</div><div class="line">INFO [03-07|13:52:30] 🔗 block reached canonical chain          number=78 <span class="built_in">hash</span>=d79fee…65e27b</div><div class="line">INFO [03-07|13:52:30] 🔨 mined potential block                  number=83 <span class="built_in">hash</span>=ca0e74…b4c1b8</div><div class="line">INFO [03-07|13:52:30] Commit new mining work                   number=84 txs=0 uncles=0 elapsed=0s</div><div class="line">INFO [03-07|13:52:30] Successfully sealed new block            number=84 <span class="built_in">hash</span>=97e4ce…aadb11</div><div class="line">INFO [03-07|13:52:30] 🔗 block reached canonical chain          number=79 <span class="built_in">hash</span>=d6378c…dfe012</div><div class="line">INFO [03-07|13:52:30] 🔨 mined potential block                  number=84 <span class="built_in">hash</span>=97e4ce…aadb11</div><div class="line">INFO [03-07|13:52:30] Commit new mining work                   number=85 txs=0 uncles=0 elapsed=500.6µs</div><div class="line">INFO [03-07|13:52:34] Successfully sealed new block            number=85 <span class="built_in">hash</span>=5f8afd…339017</div><div class="line">INFO [03-07|13:52:34] 🔗 block reached canonical chain          number=80 <span class="built_in">hash</span>=d3540e…2c1c94</div><div class="line">INFO [03-07|13:52:34] 🔨 mined potential block                  number=85 <span class="built_in">hash</span>=5f8afd…339017</div><div class="line">INFO [03-07|13:52:34] Commit new mining work                   number=86 txs=0 uncles=0 elapsed=0</div></pre></td></tr></table></figure></p>
+<p>注意：在光标闪烁出耐心等待他挖矿</p>
+<h2 id="打开ETH钱包查看挖矿结果"><a href="#打开ETH钱包查看挖矿结果" class="headerlink" title="打开ETH钱包查看挖矿结果"></a>打开ETH钱包查看挖矿结果</h2><ol>
+<li>打开ETH钱包的exe程序 如下图</li>
+</ol>
+<p>正确：</p>
+<p><img src="http://lengzi.me/uploads/eht2.png" alt="安装失败"></p>
+<p>错误：</p>
+<p><img src="http://lengzi.me/uploads/eht2.png" alt="安装失败"></p>
+<ul>
+<li>注意打开钱包启动页面是图一不是图二</li>
+</ul>
+<ol>
+<li>查看钱包内所挖出来的ETH 如下图</li>
+</ol>
+<p><img src="http://lengzi.me/uploads/eht.png" alt="安装失败"></p>
+<ol>
+<li>在钱包内可进行转账操作</li>
+</ol>
+<p>注意：如果要想转账确认需要在 Geth操作台内启动挖矿指令(miner.start())才能确认交易</p>
+<h2 id="操作台常用指令"><a href="#操作台常用指令" class="headerlink" title="操作台常用指令"></a>操作台常用指令</h2><ol>
+<li>查询所有以太坊账户</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; personal.listAccounts</div></pre></td></tr></table></figure>
+<ol>
+<li>查看以太坊账户余额</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; eth.getBalance(eth.accounts[1])</div></pre></td></tr></table></figure>
+<ol>
+<li><p>开始挖矿</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; miner.start()</div></pre></td></tr></table></figure>
+</li>
+<li><p>停止挖矿</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt; miner.stop()</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="指令参数解释"><a href="#指令参数解释" class="headerlink" title="指令参数解释"></a>指令参数解释</h2><table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>targetgaslimit</td>
+<td>每个块的gas上限</td>
+</tr>
+<tr>
+<td>rpc</td>
+<td>启动rpc通信，可以进行智能合约的部署和调试</td>
+</tr>
+<tr>
+<td>rpcaddr</td>
+<td>rpc接口的地址</td>
+</tr>
+<tr>
+<td>rpcport</td>
+<td>rpc接口的端口号</td>
+</tr>
+<tr>
+<td>port</td>
+<td>网络监听端口，用于节点之间通信</td>
+</tr>
+<tr>
+<td>rpcapi</td>
+<td>设置rpc的范围，暂时开启eth,web3,personal足够</td>
+</tr>
+<tr>
+<td>networkid</td>
+<td>每个块的gas上限</td>
+</tr>
+<tr>
+<td>targetgaslimit</td>
+<td>设置当前区块链的网络ID</td>
+</tr>
+<tr>
+<td>nodiscover</td>
+<td>禁止被网络中其它节点发现，需要手动添加该节点到网络</td>
+</tr>
+<tr>
+<td>maxpeers</td>
+<td>最大节点数量</td>
+</tr>
+<tr>
+<td>datadir</td>
+<td>设置当前区块链网络数据存放的位置</td>
+</tr>
+<tr>
+<td>unlock</td>
+<td>解锁某用户（此处用用户坐标来控制，解锁后的用户调用接口发起交易时，不要需要提供密码）</td>
+</tr>
+<tr>
+<td>rpccorsdomain</td>
+<td>设置当前区块链网络数据存放的位置</td>
+</tr>
+<tr>
+<td>console</td>
+<td>启动命令行模式</td>
+</tr>
+</tbody>
+</table>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol>
+<li><a href="http://www.ehcoo.com/ether1.html" target="_blank" rel="external">从0开始搭建基于以太坊的区块链开发环境</a></li>
+<li><a href="https://segmentfault.com/a/1190000012834708" target="_blank" rel="external">轻松搭建以太坊私有链</a></li>
+<li><a href="https://github.com/ethereum/go-ethereum" target="_blank" rel="external">github ETH源码</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://lengzi.me/uploads/wechat-qcode.png" alt="冷子君 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>e-mail：lengzi.me@gmail.com</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/区块链/" rel="tag"># 区块链</a>
+          
+            <a href="/tags/ETH/" rel="tag"># ETH</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/26/《区块链之学习规划》/" rel="next" title="《区块链之学习规划》">
+                <i class="fa fa-chevron-left"></i> 《区块链之学习规划》
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://lengzi.me/uploads/avatar.png"
+               alt="冷子君" />
+          <p class="site-author-name" itemprop="name">冷子君</p>
+           
+              <p class="site-description motion-element" itemprop="description">指尖人生</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chnlzx" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/3984526183" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              大神链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.csdn.net/xiangzhihong8" title="xiangzhihong8" target="_blank">xiangzhihong8</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/WuXiaolong" title="吴小龙同學" target="_blank">吴小龙同學</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置创世区块json文件"><span class="nav-number">3.</span> <span class="nav-text">配置创世区块json文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化创世区块"><span class="nav-number">4.</span> <span class="nav-text">初始化创世区块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建私有链主账号"><span class="nav-number">5.</span> <span class="nav-text">创建私有链主账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动私有链节点"><span class="nav-number">6.</span> <span class="nav-text">启动私有链节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开ETH钱包查看挖矿结果"><span class="nav-number">7.</span> <span class="nav-text">打开ETH钱包查看挖矿结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作台常用指令"><span class="nav-number">8.</span> <span class="nav-text">操作台常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令参数解释"><span class="nav-number">9.</span> <span class="nav-text">指令参数解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">10.</span> <span class="nav-text">引用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">冷子君</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("9r6EQGuczXvTWOTn30NyI9cP-gzGzoHsz", "lqEeuKNFY4KXkS3mGtvWYYdD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  	 <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("9r6EQGuczXvTWOTn30NyI9cP-gzGzoHsz", "lqEeuKNFY4KXkS3mGtvWYYdD");</script>
+<script>
+function showTime(Counter) {
+	var query = new AV.Query(Counter);
+	$(".leancloud_visitors").each(function() {
+		var url = $(this).attr("id").trim();
+		query.equalTo("url", url);
+		query.find({
+			success: function(results) {
+				if (results.length == 0) {
+					var content = $(document.getElementById(url)).text() + ': 0';
+					$(document.getElementById(url)).text(content);
+					return;
+				}
+				for (var i = 0; i < results.length; i++) {
+					var object = results[i];
+					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					$(document.getElementById(url)).text(content);
+				}
+			},
+			error: function(object, error) {
+				console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+	});
+}
+function addCount(Counter) {
+	var Counter = AV.Object.extend("Counter");
+	url = $(".leancloud_visitors").attr('id').trim();
+	title = $(".leancloud_visitors").attr('data-flag-title').trim();
+	var query = new AV.Query(Counter);
+	query.equalTo("url", url);
+	query.find({
+		success: function(results) {
+			if (results.length > 0) {
+				var counter = results[0];
+				counter.fetchWhenSave(true);
+				counter.increment("time");
+				counter.save(null, {
+					success: function(counter) {
+						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(counter, error) {
+						console.log('Failed to save Visitor num, with error message: ' + error.message);
+					}
+				});
+			} else {
+				var newcounter = new Counter();
+				newcounter.set("title", title);
+				newcounter.set("url", url);
+				newcounter.set("time", 1);
+				newcounter.save(null, {
+					success: function(newcounter) {
+					    console.log("newcounter.get('time')="+newcounter.get('time'));
+						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						$(document.getElementById(url)).text(content);
+					},
+					error: function(newcounter, error) {
+						console.log('Failed to create');
+					}
+				});
+			}
+		},
+		error: function(error) {
+			console.log('Error:' + error.code + " " + error.message);
+		}
+	});
+}
+$(function() {
+	var Counter = AV.Object.extend("Counter");
+	if ($('.leancloud_visitors').length == 1) {
+		addCount(Counter);
+	} else if ($('.post-title-link').length > 1) {
+		showTime(Counter);
+	}
+});
+</script>
+  
+</body>
+</html>
