@@ -997,11 +997,93 @@
 
   
 
+
+
+
   
-  
-  
-  
-  	 <!-- custom analytics part create by xiamo -->
+  	 
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+<!-- custom analytics part create by xiamo -->
 <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
 <script>AV.initialize("9r6EQGuczXvTWOTn30NyI9cP-gzGzoHsz", "lqEeuKNFY4KXkS3mGtvWYYdD");</script>
 <script>
@@ -1013,13 +1095,13 @@ function showTime(Counter) {
 		query.find({
 			success: function(results) {
 				if (results.length == 0) {
-					var content = $(document.getElementById(url)).text() + ': 0';
+					var content = '0 ' + $(document.getElementById(url)).text();
 					$(document.getElementById(url)).text(content);
 					return;
 				}
 				for (var i = 0; i < results.length; i++) {
 					var object = results[i];
-					var content = $(document.getElementById(url)).text() + ': ' + object.get('time');
+					var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
 					$(document.getElementById(url)).text(content);
 				}
 			},
@@ -1027,8 +1109,10 @@ function showTime(Counter) {
 				console.log("Error: " + error.code + " " + error.message);
 			}
 		});
+
 	});
 }
+
 function addCount(Counter) {
 	var Counter = AV.Object.extend("Counter");
 	url = $(".leancloud_visitors").attr('id').trim();
@@ -1043,7 +1127,7 @@ function addCount(Counter) {
 				counter.increment("time");
 				counter.save(null, {
 					success: function(counter) {
-						var content = $(document.getElementById(url)).text() + ': ' + counter.get('time');
+						var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
 						$(document.getElementById(url)).text(content);
 					},
 					error: function(counter, error) {
@@ -1058,7 +1142,7 @@ function addCount(Counter) {
 				newcounter.save(null, {
 					success: function(newcounter) {
 					    console.log("newcounter.get('time')="+newcounter.get('time'));
-						var content = $(document.getElementById(url)).text() + ': ' + newcounter.get('time');
+						var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
 						$(document.getElementById(url)).text(content);
 					},
 					error: function(newcounter, error) {
@@ -1081,6 +1165,7 @@ $(function() {
 	}
 });
 </script>
+
   
 </body>
 </html>
